@@ -46,9 +46,11 @@ class SYZOJData:
 
 
 async def send_problem(problem: dict, session: aiohttp.ClientSession):
-    async with session.post(f'{URL}{problem["id"]}/edit', data=SYZOJData.from_json(problem).__dict__) as _response:
+    async with session.post(f'{URL}{problem["id"]}/edit',
+                            data=SYZOJData.from_json(problem).__dict__,
+                            allow_redirects=False) as _response:
         pass
-    async with session.post(f'{URL}{problem["id"]}/public') as _response:
+    async with session.post(f'{URL}{problem["id"]}/public', allow_redirects=False) as _response:
         pass
 
 

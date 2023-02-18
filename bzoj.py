@@ -80,6 +80,7 @@ def main():
             except ValueError:
                 print('error:', item)
 
+
 def main2():
     with open('bzojch-master/p/1001.html', errors='ignore') as fin:
         generator('1111', fin.read(), p=True)
