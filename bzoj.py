@@ -64,7 +64,7 @@ def generator(item: str, s: str, *, p: bool = False) -> OutputGenerator:
     b = OutputGenerator(int(item.split('.')[0]), title, int(time_limit.strip().split('s')[0]),
                         int(memory_limit.lower().split('m')[0].strip()), description,
                         input_format, output_format, input_sample, output_sample, hint, source,
-                        list(map(lambda x: x['src'].rsplit('/', maxsplit=1)[1], imgs)))
+                        list(map(lambda x: get_img(x['src']), imgs)))
     if p:
         print(b.to_dict())
     return b
